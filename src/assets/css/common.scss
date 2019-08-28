@@ -1,0 +1,141 @@
+$green: #5BC0BF;
+$red: #D23029;
+$gray: #5a5a5a;
+$bgColor: #efefef;
+$border: 1px solid #b4b4b4;
+
+.box-title {
+  line-height: 45px;
+  color: #5a5a5a;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #efefef;
+  text-align: left;
+  padding-left: 20px;
+  border: 2px solid #b4b4b4;
+  border-bottom-color: transparent;
+}
+
+.mall-btn {
+  position: relative;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 15px;
+  color: $gray;
+  border-radius: 4px;
+  border: 1px solid rgba(191, 191, 191, 1);
+  background-color: #fff;
+  padding: 0 12px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.mall-btn.small {
+  height: 28px;
+  line-height: 28px;
+  font-size: 13px;
+}
+
+.mall-btn.active {
+  color: #fff;
+  background-color: #5BC0BF;
+  border-color: #5BC0BF;
+}
+
+.mall-btn:disabled {
+  opacity: 0.5;
+}
+
+.mall-table {
+  border-right: 1px solid #b4b4b4;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.search-wrap {
+  cursor: pointer;
+}
+
+.mall-table {
+  border-right: $border;
+  border-bottom: $border;
+
+  thead {
+    background-color: #EEEEEE;
+  }
+
+  td {
+    height: 50px;
+    color: $gray;
+    text-align: center;
+    border-left: $border;
+    border-top: $border;
+    padding: 0 20px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 60px;
+  }
+}
+
+.dialog-table {
+  margin-top: 20px;
+}
+
+.table-btn {
+  color: $green;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form-img {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.empty-text {
+  text-align: center;
+  padding: 50px 0;
+  color: $gray;
+}
+
+.upload-btn-wrap {
+  position: relative;
+}
+
+.upload-btn {
+  font-size: 15px;
+  padding: 9px 15px;
+  background-color: $green;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.upload-input.large {
+  width: 98px;
+  height: 40px;
+  top: 0;
+}
+
+.upload-input {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 80px;
+  height: 32px;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
