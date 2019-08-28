@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="login">
-      <h2>{{ msg }}</h2>
+      <h2>零售后台管理系统</h2>
       <span hidden>13932493200</span>
       <div class="login-form">
         <div class="form-item flex h-center">

@@ -4,4 +4,4 @@ export default {
   reg: {
     phone: /^1[345678]{1}\d{9}$/,
   }
-}
+}  
