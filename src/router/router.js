@@ -38,7 +38,39 @@ export default new Router({
           component: resolve => {
             require(['@/views/index/accountSetting'], resolve)
           }
-        }
+        },
+        {
+          // 商品列表
+          path: '/goods/list',
+          name: 'goodsList',
+          component: resolve => {
+            require(['@/views/goods/list'], resolve)
+          }
+        },
+        {
+          // 添加商品
+          path: '/goods/add',
+          name: 'add',
+          component: resolve => {
+            require(['@/views/goods/add'], resolve)
+          }
+        },
+        {
+          // 订单管理
+          path: '/order/list',
+          name: 'orderList',
+          component: resolve => {
+            require(['@/views/order/list'], resolve)
+          }
+        },
+        {
+          // 订单管理
+          path: '/promotion/header',
+          name: 'header',
+          component: resolve => {
+            require(['@/views/promotion/header'], resolve)
+          }
+        },
       ]
     },
   ]

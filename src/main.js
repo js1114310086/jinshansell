@@ -9,12 +9,19 @@ import {
 import './assets/css/element-variables.scss'
 import axios from './utils/axios'
 import plugin from './utils/plugin'
+// 这是 vue 的富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
 Vue.config.productionTip = false;
 Vue.use(Element);
 Vue.prototype.$http = axios;
 Vue.use(plugin);
+Vue.use(VueQuillEditor)
 
-// 设置全局前  置导航守卫 beforeEach((to, from, next)
+// 设置全局  前置导航守卫 beforeEach((to, from, next)
 router.beforeEach((to, from, next) => {
   if (!localStorage.getItem('userInfo') || JSON.stringify(store.getters.userInfo) === '{}') {
     if (to.name == 'login') {

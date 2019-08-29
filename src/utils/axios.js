@@ -3,10 +3,13 @@ import qs from 'qs'
 import CONFIG from './config'
 import store from '../store/store'
 import router from '../router/router'
-import { Message } from 'element-ui'
+import {
+  Message
+} from 'element-ui'
 
 axios.defaults.baseURL = CONFIG.api;
 axios.defaults.timeout = 5000;
+// 请求拦截器
 axios.interceptors.request.use((config) => {
   config.withCredentials = true;
   if (config.type == 'form' && config.file != 'image') {
@@ -20,7 +23,7 @@ axios.interceptors.request.use((config) => {
   Message.error('请求超时');
   return Promise.reject(err);
 });
-
+// 响应拦截器
 axios.interceptors.response.use((res) => {
   if (res.data.errno == 200) {
     return res.data.data

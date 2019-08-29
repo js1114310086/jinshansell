@@ -10,6 +10,14 @@
       </div>
     </header>
     <div class="main" :style="{ 'height': mainHeight + 'px' }">
+      <!--<el-menu :router="true">
+          <div v-for="(item, index) in menu" :key="index">
+            <p class="menu-title">{{ item.sub }}</p>
+            <el-menu-item v-for="(child, idx) in item.menu" :key="idx" :index="child.path">
+              <span slot="title">{{ child.name }}</span>
+            </el-menu-item>
+          </div>
+      </el-menu>-->
       <div class="menu">
         <ul v-for="(item,index) in menu" :key="index">
           <li class="menu-item menu-title">{{ item.sub }}</li>
@@ -25,20 +33,17 @@
 </template>
 
 <script>
-  import nav from '@/utils/nav'
+  import nav from "@/utils/nav";
   import {
     mapState
-  } from 'vuex'
+  } from "vuex";
   export default {
-    name: 'index',
+    name: "index",
     computed: {
-      // 计算属性，
       activeNav() {
-        // 意思是将取到的store管理的数据中的activeNav数据赋值给data函数中的activeNav
         return this.$store.getters.activeNav;
       },
       menu() {
-        // 将store中管理的 nav.js 当中的的第 x 个 的 子数据返回给meun
         return nav[this.$store.getters.activeNav].child;
       },
       userInfo() {
@@ -50,49 +55,39 @@
         mainHeight: window.innerHeight - 90,
         nav: nav,
         loginData: [{}, {}]
-      }
+      };
     },
-    // 是里挂载完毕后执行的
     mounted() {
-      // 客户端请求(C->S)
-      // 请求类型(post) [Content-Type:application/json]
-      // 请求url ( /merchant_goods_brand/query_for_page)
-      // 请求参数
-      // {
-      //     "currentPage":1, int 页码 必填
-      //     "pageSize":10, int 页宽 必填
-      //     "goodsName":"", String 商品名称
-      //     "typeId":"", String 商品分类id
-      //     "brandId":"" String 品牌id
-      // }
-      this.$http.post("merchant/get_merchant_login_info_list", {
-        currentPage: 1,
-        pageSize: 10,
-        orderBy: "operate_time desc"
-      }, {
-        type: "form"
-      }).then(res => {
-        // 请求返回成功将 list 赋值给  loginData
-        this.loginData = res.list;
-      });
+      this.$http
+        .post(
+          "merchant/get_merchant_login_info_list", {
+            currentPage: 1,
+            pageSize: 10,
+            orderBy: "operate_time desc"
+          }, {
+            type: "form"
+          }
+        )
+        .then(res => {
+          this.loginData = res.list;
+        });
     },
     methods: {
       switchNav(path) {
-        this.$router.push(path)
+        this.$router.push(path);
       },
       loginOut() {
         this.$router.push("/");
-        // commit是提交store里面的方法 相当于调用了 CLEAR_USERINFO()函数
         this.$store.commit("CLEAR_USERINFO");
       },
       linkIndex() {
-        // $router.push  意思将路由的路径设置为 "index"并去匹配对应的路由规则
-        this.$router.push("/index")
+        this.$router.push("/index");
       }
-    },
-  }
+    }
+  };
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
   @import "~@/assets/css/common";
 
   .container {

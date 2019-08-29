@@ -10,16 +10,16 @@
         </el-upload>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm" required>
           <el-form-item label="用户名" prop="name">
-            <el-input v-model="ruleForm.name"></el-input>
+            <el-input v-model="ruleForm.name" clearable></el-input>
           </el-form-item>
           <el-form-item label="旧密码" prop="oldPassword">
-            <el-input type="password" v-model="ruleForm.oldPassword"></el-input>
+            <el-input type="password" v-model="ruleForm.oldPassword" clearable></el-input>
           </el-form-item>
           <el-form-item label="新密码" prop="newPassword">
-            <el-input type="password" v-model="ruleForm.newPassword"></el-input>
+            <el-input type="password" v-model="ruleForm.newPassword" clearable></el-input>
           </el-form-item>
-          <el-form-item label="确定密码" prop="twicePassword">
-            <el-input type="password" v-model="ruleForm.twicePassword"></el-input>
+          <el-form-item label="确定密码" prop="twicePassword" clearable>
+            <el-input type="password" v-model="ruleForm.twicePassword" clearable></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="update('ruleForm')">提交</el-button>
@@ -105,7 +105,7 @@
           this.avatar = this.userInfo.imgUrl = res.image;
         });
       },
-      updated(formName) {
+      update(formName) {
         // validate  对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise
         this.$refs[formName].validate(valid => {
           if (valid) {

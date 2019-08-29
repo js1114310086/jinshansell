@@ -17,13 +17,13 @@
     </div>
   </div>
 </template>
+
 <script>
   import CONFIG from "../utils/config";
   export default {
     name: "login",
     data() {
       return {
-        msg: "张金山的后台管理",
         form: {
           loginName: "13932493200",
           loginPassword: "000000"
@@ -74,7 +74,7 @@
   };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .container {
     position: fixed;
     width: 100vw;
