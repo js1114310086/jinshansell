@@ -10,14 +10,6 @@
       </div>
     </header>
     <div class="main" :style="{ 'height': mainHeight + 'px' }">
-      <!--<el-menu :router="true">
-          <div v-for="(item, index) in menu" :key="index">
-            <p class="menu-title">{{ item.sub }}</p>
-            <el-menu-item v-for="(child, idx) in item.menu" :key="idx" :index="child.path">
-              <span slot="title">{{ child.name }}</span>
-            </el-menu-item>
-          </div>
-      </el-menu>-->
       <div class="menu">
         <ul v-for="(item,index) in menu" :key="index">
           <li class="menu-item menu-title">{{ item.sub }}</li>
