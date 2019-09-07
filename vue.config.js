@@ -5,6 +5,7 @@ module.exports = {
   lintOnSave: false,
   // 配置代理
   devServer: {
+    disableHostCheck: true,
     host: '127.0.0.1',
     // 设置端口号，默认8080
     port: 9999,

@@ -56,6 +56,14 @@ export default new Router({
           }
         },
         {
+          // 商品回收
+          path: '/goods/recycle',
+          name: 'recycle',
+          component: resolve => {
+            require(['@/views/goods/recycle'], resolve)
+          }
+        },
+        {
           // 订单管理
           path: '/order/list',
           name: 'orderList',

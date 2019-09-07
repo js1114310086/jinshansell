@@ -25,7 +25,7 @@
     data() {
       return {
         form: {
-          loginName: "13932493200",
+          loginName: "18700323626",
           loginPassword: "000000"
         },
         config: CONFIG,
